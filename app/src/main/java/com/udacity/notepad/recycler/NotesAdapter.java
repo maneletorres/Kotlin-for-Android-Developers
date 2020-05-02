@@ -34,7 +34,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
 
     @Override
     public long getItemId(int position) {
-        return notes.get(position).getId();
+        return notes.get(position).id;
     }
 
     @Override
@@ -51,7 +51,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
     @Override
     public void onBindViewHolder(NotesViewHolder holder, int position) {
         final Note note = notes.get(position);
-        holder.text.setText(note.getText());
+        holder.text.setText(note.text);
     }
 
     public void refresh() {
