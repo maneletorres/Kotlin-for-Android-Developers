@@ -43,7 +43,7 @@ class NotesAdapter(private val context: Context) : RecyclerView.Adapter<NotesVie
         if (isRefreshing) return
         isRefreshing = true
         DataStore.execute {
-            val notes = DataStore.notes.all
+            val notes = DataStore.notes.getAll()
             Handler(Looper.getMainLooper()).post {
                 this@NotesAdapter.notes = notes
                 notifyDataSetChanged()
